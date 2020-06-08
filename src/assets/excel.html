@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pure JavaScript Excel</title>
+</head>
+<body>
+<div class="container" id="app">
+    <div class="excel">
+        <div class="excel__header excel-header">
+            <input type="text" class="excel-header__title" value="Новая таблица">
+
+            <div>
+                <div class="excel-header__button">
+                    <span class="material-icons">exit_to_app</span>
+                </div>
+                <div class="excel-header__button">
+                    <span class="material-icons">delete_outline</span>
+                </div>
+            </div>
+        </div>
+        <!-- /.excel__header -->
+        <div class="excel__toolbar excel-toolbar">
+            <div class="excel-toolbar__button">
+                <span class="material-icons">format_align_left</span>
+            </div>
+            <div class="excel-toolbar__button">
+                <span class="material-icons">format_align_center</span>
+            </div>
+            <div class="excel-toolbar__button">
+                <span class="material-icons">format_align_right</span>
+            </div>
+            <div class="excel-toolbar__button">
+                <span class="material-icons">format_bold</span>
+            </div>
+            <div class="excel-toolbar__button">
+                <span class="material-icons">format_italic</span>
+            </div>
+            <div class="excel-toolbar__button">
+                <span class="material-icons">format_underline</span>
+            </div>
+        </div>
+        <!-- /.excel__toolbar -->
+        <div class="excel__formula excel-formula">
+            <div class="excel-formula__info">fx</div>
+            <div class="excel-formula__input" contenteditable="true" spellcheck="false"></div>
+        </div>
+        <!-- /.excel__formula -->
+        <div class="excel__table excel-table">
+            <div class="excel-table__row">
+                <div class="excel-table__info"></div>
+                <!-- /.excel-table__info -->
+                <div class="excel-table__data">
+                    <div class="excel-table__column">A</div>
+                    <!-- /.excel-table__column -->
+                    <div class="excel-table__column">B</div>
+                    <!-- /.excel-table__column -->
+                    <div class="excel-table__column">C</div>
+                    <!-- /.excel-table__column -->
+                </div>
+                <!-- /.excel-table__data -->
+            </div>
+            <!-- /.excel-table__row -->
+            <div class="excel-table__row">
+                <div class="excel-table__info">1</div>
+                <!-- /.excel-table__info -->
+                <div class="excel-table__data">
+                    <div class="excel-table__cell selected" contenteditable="true"></div>
+                    <!-- /.excel-table__column -->
+                    <div class="excel-table__cell" contenteditable="true"></div>
+                    <!-- /.excel-table__column -->
+                    <div class="excel-table__cell"> contenteditable="true"</div>
+                    <!-- /.excel-table__column -->
+                </div>
+                <!-- /.excel-table__data -->
+            </div>
+            <!-- /.excel-table__row -->
+        </div>
+        <!-- /.excel__table -->
+    </div>
+</div>
+</body>
+</html>
