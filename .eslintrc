@@ -3,13 +3,16 @@
   "env": {
     "es6": true,
     "browser": false,
-    "node": true
+    "node": true,
   },
   "rules": {
     "semi": "off",
     "linebreak-style": "off",
     "arrow-parens": "off",
-    "indent": "off"
+    "indent": "off",
+    "require-jsdoc": "off",
+    "quotes": "off",
+    "no-undef": "off"
   },
   "extends": [
     "eslint:recommended",
