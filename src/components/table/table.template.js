@@ -3,20 +3,34 @@ const CODES = {
     Z: 90,
 }
 
-function createCell() {
+function createCell(_, index) {
     return `
-      <div class="excel-table__cell"></div>
+      <div class="excel-table__cell"
+           data-char="${toChar(null, index)}"
+      ></div>
     `
 }
 
-function createCol(content) {
-    return `<div class="excel-table__column">${content}</div>`
+function createCol(content, index) {
+    return `<div class="excel-table__column" 
+                 data-resize="resizable" 
+                 data-char="${toChar(null, index)}">
+                ${content}
+                <div class="excel-table__resize-col" data-resize="col"></div>
+            </div>
+    `
 }
 
 function createRow(content, index) {
+    const resize = index > 1 ?
+        `<div class="excel-table__resize-row" data-resize="row"></div>` : ``
+
+    index = index ? index : ''
     return `
-        <div class="excel-table__row">
-            <div class="excel-table__info">${index || ''}</div>
+        <div class="excel-table__row" data-resize="resizable">
+            <div class="excel-table__info">
+                ${index + resize}
+            </div>
             <div class="excel-table__data">${content}</div>
         </div>
     `
@@ -36,12 +50,11 @@ export function createTable(rowsCount = 20) {
         .join('')
     rows.push(createRow(cols))
 
-    const cell = new Array(colsCount)
-        .fill('1')
-        .map(createCell)
-        .join('')
-
     for (let i = 0; i < rowsCount; i++) {
+        const cell = new Array(colsCount)
+            .fill('1')
+            .map(createCell)
+            .join('')
         rows.push(createRow(cell, i + 1))
     }
 

@@ -8,11 +8,13 @@
   top: $toolbar-height + $header-height + $formula-height
   overflow-x: auto
   padding-bottom: 2px
+
   &__row
     display: flex
     flex-direction: row
     min-height: 20px
     height: 24px
+
   &__info
     display: flex
     justify-content: center
@@ -22,9 +24,11 @@
     border: 1px solid $border-color
     background: #f8f9fa
     border-top: none
+    position: relative
 
   &__data
     display: flex
+
   &__column
     display: flex
     justify-content: center
@@ -36,6 +40,8 @@
     height: 100%
     border-top: none
     border-left: none
+    position: relative
+
   &__cell
     min-width: 40px
     padding: 5px
@@ -46,7 +52,26 @@
     border-left: 0
     white-space: nowrap
     outline: none
+
     &.selected
       border: none
       outline: 2px solid #3c74ff
       z-index: 2
+
+  &__resize-col, &__resize-row
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    width: 3px
+    background: #3c74ff
+    opacity: 0
+    cursor: col-resize
+
+    &:hover
+      opacity: 1
+
+  &__resize-row
+    width: 100%
+    height: 3px
+    cursor: row-resize
